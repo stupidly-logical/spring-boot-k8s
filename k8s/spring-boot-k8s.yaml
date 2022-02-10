@@ -9,22 +9,22 @@ spec:
     matchLabels:
       app: spring-boot-k8s-deployment
       tier: backend
-    replicas: 1
-    template:
-      metadata:
-        labels:
-          app: spring-boot-k8s-deployment
-          tier: backend
-      spec:
-        containers:
-        - name: spring-boot-k8s-pod
-          image: spring-boot-k8s:latest
-          imagePullPolicy: Never
-          ports:
-          - containerPort: 8080
-          env:
-          - name: SPRING_PROFILES_ACTIVE
-            value: default
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: spring-boot-k8s-deployment
+        tier: backend
+    spec:
+      containers:
+      - name: spring-boot-k8s-pod
+        image: stupidlylogical/spring-boot-k8s:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8080
+        env:
+        - name: SPRING_PROFILES_ACTIVE
+          value: default
 
 ---
 
